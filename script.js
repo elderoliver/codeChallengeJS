@@ -1,5 +1,3 @@
-console.log("testing...");
-
 const game = {
   team1: "Bayern Munich",
   team2: "Borrussia Dortmund",
