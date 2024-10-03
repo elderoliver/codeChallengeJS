@@ -30,7 +30,7 @@ const game = {
     ],
   ],
   score: "4:0",
-  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels", "Hummels"],
   date: "Nov 9th, 2037",
   odds: {
     team1: 1.33,
@@ -146,11 +146,8 @@ for (const [propertyName, value] of Object.entries(game.odds)) {
 //4
 let scorers = {};
 
-for (const [index, value] of game.scored.entries()) {
-  console.log(index, value);
-  scorers = {
-    index: value,
-  };
+for (const [index, player] of game.scored.entries()) {
+  scorers[player] = scorers[player] === undefined ? 1 : scorers[player] + 1;
 }
 
 console.log(scorers);
