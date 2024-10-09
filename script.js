@@ -193,16 +193,23 @@ const arrEventsNoDuplicate = [...mapEvents];
 
 console.log(arrEventsNoDuplicate);
 
+// other soluction
+const mapEvents2 = gameEvents.values();
+const mapEvents2Set = new Set(mapEvents2);
+const arrEventsNoDuplicate2 = [...mapEvents2Set];
+console.log("arrEventsNoDuplicate2", arrEventsNoDuplicate2);
+
 //2
 gameEvents.delete(64);
 console.log(gameEvents);
 
 //3 ??
 const totalEvents = gameEvents.size;
-let totalMinutes = 0;
-for (const [minute, event] of gameEvents) totalMinutes += minute;
-console.log(
-  `An event happened, on average, every ${totalMinutes / totalEvents} minutes`
-);
+console.log(`An event happened, on average, every ${90 / totalEvents} minutes`);
 
-//4 I've got to finish this one.
+//4
+for (const [minute, event] of gameEvents) {
+  console.log(
+    `[${minute <= 45 ? "FIRST HALF" : "SECOND HALF"}] ${minute}: ${event}`
+  );
+}
